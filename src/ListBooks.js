@@ -23,7 +23,7 @@ const ListBooks = props => {
             }
 
             <div className="open-search">
-                <Link to='/'><button>Add a book</button></Link>
+                <Link to='/search'><button>Add a book</button></Link>
             </div>
         </div>
 
