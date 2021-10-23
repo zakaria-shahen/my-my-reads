@@ -1,13 +1,13 @@
 
 ### Component
 
-1. book-image
-2. book-info
-3. book-change status
-4. Book
-5. Books list
-6. layout list
-7. layout main 
+<!-- 1. book-image=> Done -->
+<!-- 2. book-info -->
+<!-- 3. book-change status -->
+4. Book => Done 
+5. Books list => Done
+6. layout list => Done
+7. layout main => 70% 
 8. search Book (add Book)
 
 
