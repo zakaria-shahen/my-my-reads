@@ -11,8 +11,16 @@ const Books = props => {
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {
-                                props.data.map((book) => <li key={book.id}><Book data={book} changeCategory={props.changeCategory} /></li>)
+                                props.data && props.data.map(book => {
+                                    const bookId = typeof (book) === 'string' ? book : book.id
+                                    return (<li key={bookId}>
+                                        <Book bookId={bookId}
+                                            book={book}
+                                            changeCategory={props.changeCategory} />
+                                    </li>)
+                                })
                             }
+
 
                         </ol>
                     </div>

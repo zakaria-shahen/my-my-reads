@@ -4,10 +4,6 @@ import { Link } from "react-router-dom"
 import Books from './Books'
 
 const ListBooks = props => {
-    const category = [{ name: 'Currently Reading', id: 'currentlyReading' },
-    { name: 'Want to Reading', id: 'wantToRead' },
-    { name: 'Read', id: 'read' }]
-
 
     return (
         <div className="list-books">
@@ -15,11 +11,12 @@ const ListBooks = props => {
                 <h1>MyReads</h1>
             </div>
             {
-                category.map((element) => (
-                    <Books key={element.id} data={props.books.filter((book) => book.category === element.id )}
-                        changeCategory={props.changeCategory}
-                        category={element.name} />
-                ))
+                Object.keys(props.books).map(key =>
+                (<Books key={key}
+                    data={props.books[key]}
+                    changeCategory={{set: props.changeCategory}}
+                    category={key} />)
+                )
             }
 
             <div className="open-search">
