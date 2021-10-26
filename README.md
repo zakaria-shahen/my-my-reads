@@ -17,22 +17,36 @@ To run the application
 
 When searching for books, please use one of the words saved in a file [SEARCH_TERMS.md](SEARCH_TERMS.md)
 
+### website structure
+-  App.js
+   -  ListBooks.js `\`
+      -  Books.js
+         -  Book.js
+   -  SearchPage.js `\search`
+      -   Books.jsSearchPage
+          -   Book.js
+
 ## File Schema
 ```bash
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── SEARCH_TERMS.md # Search words available for use.
+├── package.json 
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
+│   ├── favicon.ico 
+│   └── index.html 
 └── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
+    ├── App.css 
+    ├── App.js 
+    ├── Component
+    │   ├── Book.js # Show Book 
+    │   ├── Books.js # To display one or more books of the Book.js component.
+    |   ├── ListBooks.js # To view a collection of books.
+    |   ├── SearchPage.js # Searching for books.
+    |   └── BooksAPI.js # A JavaScript API for the provided Udacity backend.
+    ├── icons 
     │   ├── add.svg
     │   ├── arrow-back.svg
     │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+    ├── index.css 
+    └── index.js
 ```
+
