@@ -13,6 +13,7 @@ class Book extends Component {
             this.getDate(this.props.bookId)
             return
         } else {
+            
 
             this.setState({book: this.props.book})
         }

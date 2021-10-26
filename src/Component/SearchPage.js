@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-import { search } from './BooksAPI'
-import Books from './Books'
-
 import Alert from "@mui/material/Alert"
 import Snackbar from "@mui/material/Snackbar"
 
-// NOTES: The search from BooksAPI is limited to a particular set of search terms.
-// You can find these search terms here:
-// https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-// However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-// you don't find a specific author or title. Every search is limited by search terms.
+import { search } from './BooksAPI'
+import Books from './Books'
 
 
 const SearchPage = props => {
     const [word, setWord] = useState('')
-    // const [book, setBook] = useState({ id: '', title: '', author: '', image: '' })
     const [result, setResult] = useState('')
     const [open, setOpen] = useState(false)
-    //  books.industryIdentifiers[0].identifier
-
 
     const changeWord = event => setWord(event.target.value)
 
@@ -29,6 +19,8 @@ const SearchPage = props => {
     useEffect(() => {
         //  if empty variable 
         if (!word) {
+            setResult('')
+            handleClose()
             return
         }
 
@@ -36,8 +28,23 @@ const SearchPage = props => {
         search(word)
             .then(data => {
                 if (Array.isArray(data)) {
+                    const filterDate = data.filter(book => {
+                        const bookID = book.id
+                        const keys = Object.keys(props.savedBooks)
 
-                    setResult(data)
+                        for (const key of keys) {
+                            for (const book of props.savedBooks[key]) {
+                                if (book === bookID) {
+                                    return false
+                                }
+
+                            }
+                        }
+                        return true
+
+                    })
+
+                    setResult(filterDate)
 
                 } else {
                     setResult('')

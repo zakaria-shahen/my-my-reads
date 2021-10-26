@@ -14,16 +14,14 @@ class App extends Component {
   }
 
   changeCategory = event => {
-    const value = event.target.options[event.target.options.selectedIndex].value
+    const shelf = event.target.options[event.target.options.selectedIndex].value
     const bookId = event.target.id
-    update({ id: bookId }, value).then(data => this.setState({ books: data }))
+    update({ id: bookId }, shelf).then(data => this.setState({ books: data }))
 
   }
 
   addBook = event => {
-    const bookId = event.target.id
-    const shelf = event.target.options[event.target.options.selectedIndex].value
-    update({ id: bookId }, shelf).then(data => this.setState({ books: data }))
+    this.changeCategory(event)
 
   }
 
@@ -43,7 +41,10 @@ class App extends Component {
             }
           </Route>
           <Route exact path='/search' >
-            <SearchPage savedBooks={this.state.books} addBook={this.addBook} />
+            {
+              this.state.books && <SearchPage savedBooks={this.state.books} addBook={this.addBook} />
+
+            }
           </Route>
 
         </BrowserRouter>
