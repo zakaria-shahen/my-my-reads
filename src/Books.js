@@ -7,7 +7,7 @@ const Books = props => {
         <div className="list-books-content">
             <div>
                 <div className="bookshelf">
-                    <h2 className="bookshelf-title">{props.category}</h2>
+                    <h2 className="bookshelf-title">{props.category.replace(/[A-Z]/g, ' ').trim()}</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {

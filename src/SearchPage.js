@@ -77,6 +77,7 @@ const SearchPage = props => {
                         category={"result"} />)
                 }
 
+
                 <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                     <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
                         No result was found for the word "{word}"

@@ -1,11 +1,8 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 
-
 import SearchPage from './SearchPage.js'
 import ListBooks from './ListBooks.js'
-
-import AppOld from "./AppOld"
 
 import { update } from './BooksAPI'
 
@@ -39,7 +36,6 @@ class App extends Component {
     return (
       <div className="app">
         <BrowserRouter>
-          <Route exact path='/old' component={AppOld} />
           <Route exact path='/'  >
             {
               this.state.books && (<ListBooks books={this.state.books}
