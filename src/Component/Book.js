@@ -25,7 +25,7 @@ class Book extends Component {
                     this.state.book && (
                         <div className="book">
                             <div className="book-top">
-                                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${this.state.book.imageLinks.thumbnail}})` }}></div>
+                                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${this.state.book.hasOwnProperty('imageLinks') && this.state.book.imageLinks.hasOwnProperty('thumbnail') && this.state.book.imageLinks.thumbnail })`}}></div>
                                 <div className="book-shelf-changer">
                                     <select id={this.props.bookId} value={this.state.book.shelf? this.state.book.shelf : 'none' } onChange={this.props.changeCategory.set}>
                                         <option value="move" disabled>Move to...</option>
