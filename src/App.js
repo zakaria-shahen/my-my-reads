@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 
-import SearchPage from './SearchPage.js'
-import ListBooks from './ListBooks.js'
+import SearchPage from './Component/SearchPage.js'
+import ListBooks from './Component/ListBooks.js'
 
-import { update } from './BooksAPI'
+import { update } from './Component/BooksAPI'
 
 
 class App extends Component {
