@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
 
 import Alert from "@mui/material/Alert"
 import Snackbar from "@mui/material/Snackbar"
@@ -98,3 +99,8 @@ const SearchPage = props => {
 }
 
 export default SearchPage
+
+SearchPage.propTypes = {
+    addBook: PropTypes.func.isRequired,
+    savedBooks: PropTypes.object.isRequired
+}

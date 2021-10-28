@@ -1,5 +1,8 @@
 import React, { Component } from "react"
+import PropTypes from 'prop-types' 
+
 import { get } from './BooksAPI'
+
 
 class Book extends Component {
     state = {}
@@ -49,3 +52,12 @@ class Book extends Component {
 }
 
 export default Book
+
+Book.propTypes = {
+    book: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+    ]).isRequired,
+    bookId: PropTypes.string.isRequired,
+    changeCategory: PropTypes.object.isRequired
+}

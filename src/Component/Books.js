@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Book from './Book'
 
@@ -11,7 +12,7 @@ const Books = props => {
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {
-                                props.data && props.data.map(book => {
+                                props.data.map(book => {
                                     const bookId = typeof (book) === 'string' ? book : book.id
                                     return (<li key={bookId}>
                                         <Book bookId={bookId}
@@ -32,3 +33,9 @@ const Books = props => {
 
 
 export default Books
+
+Books.propTypes = {
+    changeCategory: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired,
+    category: PropTypes.string.isRequired
+}

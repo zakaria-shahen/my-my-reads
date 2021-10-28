@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
 
 import Books from './Books'
 
@@ -28,3 +29,8 @@ const ListBooks = props => {
 }
 
 export default ListBooks
+
+ListBooks.propTypes = {
+    books: PropTypes.object.isRequired,
+    changeCategory: PropTypes.func.isRequired
+}
