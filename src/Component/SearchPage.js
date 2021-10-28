@@ -31,6 +31,8 @@ const SearchPage = props => {
                     const filterDate = data.filter(book => {
                         const bookID = book.id
                         const keys = Object.keys(props.savedBooks)
+                        // const [keys] = props.savedBooks
+                        // console.log(keys)
 
                         for (const key of keys) {
                             for (const book of props.savedBooks[key]) {
@@ -52,7 +54,7 @@ const SearchPage = props => {
                 }
 
             })
-    }, [word])
+    }, [word, props.savedBooks])
 
 
     //  Alert Error UI 
